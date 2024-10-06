@@ -22,8 +22,13 @@ https://www.youtube.com/watch?v=BcV4CheBA9U
 
 ## Endpoints - Um exemplo de JSON está disponível na collection do Postman
 Usuários: http://localhost:8080/api/usuarios
+
 Recompensa: http://localhost:8080/api/recompensas
+
 Habitos: http://localhost:8080/api/habitos
+
 Registro Habito: http://localhost:8080/api/registro-habitos
+
 Unidades: http://localhost:8080/api/unidades
+
 Procedimentos: http://localhost:8080/api/procedimentos
