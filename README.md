@@ -32,3 +32,7 @@ Registro Habito: http://localhost:8080/api/registro-habitos
 Unidades: http://localhost:8080/api/unidades
 
 Procedimentos: http://localhost:8080/api/procedimentos
+
+
+# Diagrama de Classe
+![SorrisoEmJogoDiagramaClasse](https://github.com/user-attachments/assets/81a8edc4-32c8-4635-9c08-d4c7222b2d48)
