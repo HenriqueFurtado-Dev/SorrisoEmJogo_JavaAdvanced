@@ -7,11 +7,39 @@ O Sorriso Em Jogo é um aplicativo desenvolvido para incentivar as pessoas a reg
 - Rafael de Novaes         | RM: 553934 (Testes e validação)
 
 ## Rodando a aplicação
-  1 - Configure um usuário e senha para o banco de dados Oracle em: application.properties
-  
-  2 - Em project structure garanta que o SDK esteja para o java 18.0.2(Amazon Corretto)
-
-  3 - Start a classe de execução SorrisoEmJogoApplication
+```bash
+az login
+```
+ Crie um Grupo de Recursos
+```bash
+az group create --name rg-sorriso --location eastus
+```
+Crie uma Máquina Virtual
+```bash
+az vm create --resource-group rg-sorriso --name vm-sorriso --image UbuntuLTS --admin-username azureuser --generate-ssh-keys
+```
+Conecte-se à VM
+```bash
+az vm show --resource-group rg-sorriso --name vm-sorriso --show-details --query [publicIps] --output tsv
+```
+Conecte-se via SSH
+```bash
+ssh azureuser@<ENDEREÇO_IP>
+```
+Instale e Inicie o Docker na VM
+```bash
+sudo apt update
+sudo apt install -y docker.io
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+Clone o Repositório e Execute o Dockerfile
+```bash
+git clone https://github.com/HenriqueFurtado-Dev/SorrisoEmJogo_JavaAdvanced.git
+cd SorrisoEmJogo_JavaAdvanced
+sudo docker build -t sorriso-em-jogo .
+sudo docker run -p 8080:8080 sorriso-em-jogo
+```
 
 ## Link para vídeo de inserção das informações no banco:
 https://www.youtube.com/watch?v=BcV4CheBA9U
